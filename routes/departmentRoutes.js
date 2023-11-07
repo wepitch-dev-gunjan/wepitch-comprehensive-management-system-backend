@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-// router.post("/admin", createAdmin);
+router.post("/department", createDepartment);
 
-// router.get("/admin/:admin_id", getAdmin);
-// router.get("/admin", getAdmins);
+router.get("/department/:department_id", getDepartment);
+router.get("/department", getDepartments);
 
-// router.put("/admin/:admin_id", editAdmin);
+router.put("/department/:department_id", editDepartment);
 
-// router.delete("/admin/:admin_id", deleteAdmin);
+router.delete("/department/:department_id", deleteDepartment);
 
 module.exports = router;
