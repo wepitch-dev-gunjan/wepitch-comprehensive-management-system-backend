@@ -5,7 +5,18 @@ const employeeSchema = new Schema({
     type: String,
   },
   address: {
-    type: String,
+    country: {
+      type: String,
+    },
+    state: {
+      type: String,
+    },
+    city: {
+      type: String,
+    },
+    landmark: {
+      type: String,
+    },
   },
   phone: {
     type: Number,

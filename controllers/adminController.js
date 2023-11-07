@@ -24,7 +24,7 @@ exports.createAdmin = async (req, res) => {
 
     const nAdmin = new Admin(newAdmin);
 
-    const createdAdmin = await nAdmin.save();
+    await nAdmin.save();
 
     res.status(200).send({ message: "Admin created successfully" });
   } catch (error) {
