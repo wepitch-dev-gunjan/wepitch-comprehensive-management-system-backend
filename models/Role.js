@@ -7,6 +7,10 @@ const roleSchema = new Schema({
   permissions: {
     type: String,
   },
+}, {
+  timestamps: true
+}, {
+  strict: false
 });
 
 module.exports = model("Role", roleSchema);
