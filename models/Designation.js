@@ -1,17 +1,16 @@
 const { Schema, model } = require("mongoose");
 
 const designationSchema = new Schema({
-  name: {
-    type: String,
-  },
-  title: {
+  profile: {
     type: String,
   },
   department: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: 'Department'
   },
   role: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: 'Role'
   },
 });
 

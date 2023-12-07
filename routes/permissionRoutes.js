@@ -1,13 +1,14 @@
 const express = require("express");
 const router = express.Router();
+const { createPermission, getPermission, getPermissions, editPermission, deletePermission } = require('../controllers/permissionController')
 
-// router.post("/admin", createAdmin);
+router.post("/permission", createPermission);
 
-// router.get("/admin/:admin_id", getAdmin);
-// router.get("/admin", getAdmins);
+router.get("/permission/:permission_id", getPermission);
+router.get("/permission", getPermissions);
 
-// router.put("/admin/:admin_id", editAdmin);
+router.put("/permission/:permission_id", editPermission);
 
-// router.delete("/admin/:admin_id", deleteAdmin);
+router.delete("/permission/:permission_id", deletePermission);
 
 module.exports = router;

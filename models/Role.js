@@ -3,10 +3,14 @@ const { Schema, model } = require("mongoose");
 const roleSchema = new Schema({
   name: {
     type: String,
+    unique: true,
   },
-  permissions: {
-    type: String,
-  },
+  permissions: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Permission'
+    },
+  ],
 }, {
   timestamps: true
 }, {

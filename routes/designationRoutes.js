@@ -1,13 +1,14 @@
 const express = require("express");
+const { createDesignation, getDesignation, getDesignations, editDesignation, deleteDesignation } = require("../controllers/designationController");
 const router = express.Router();
 
-// router.post("/admin", createAdmin);
+router.post("/designation", createDesignation);
 
-// router.get("/admin/:admin_id", getAdmin);
-// router.get("/admin", getAdmins);
+router.get("/designation/:designation_id", getDesignation);
+router.get("/designation", getDesignations);
 
-// router.put("/admin/:admin_id", editAdmin);
+router.put("/designation/:designation_id", editDesignation);
 
-// router.delete("/admin/:admin_id", deleteAdmin);
+router.delete("/designation/:designation_id", deleteDesignation);
 
 module.exports = router;

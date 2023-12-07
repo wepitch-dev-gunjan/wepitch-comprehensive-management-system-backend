@@ -5,18 +5,23 @@ exports.createDepartment = async (req, res) => {
     const { name } = req.body;
 
     if (!name) {
-      return res.status(400).send({ error: "Please enter your name" });
+      return res.status(400).send({ error: "Please enter department name" });
     }
 
-    const newDepartment = {};
+    let department = await Department.findOne({ name });
+    console.log(department)
+    if (department) return res.status(400).send({
+      error: "Department with the name already exists"
+    })
+    department = new Department({
+      name
+    });
 
-    if (name) newDepartment.name = name;
-
-    const nDepartment = new Department(newDepartment);
-
-    const createdDepartment = await nDepartment.save();
-
-    res.status(200).send({ message: "Department created successfully" });
+    await department.save();
+    res.status(200).send({
+      message: "Department created successfully",
+      department
+    });
   } catch (error) {
     console.log(error);
     res.status(500).send({ error: "Internal Server Error" });
