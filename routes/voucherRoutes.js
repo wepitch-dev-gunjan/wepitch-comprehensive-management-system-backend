@@ -1,4 +1,5 @@
 const express = require('express');
+const { createVoucher, getVoucher, getVouchers, editVoucher, deleteVoucher } = require('../controllers/voucherController');
 const router = express.Router();
 
 router.post("/voucher", createVoucher);
