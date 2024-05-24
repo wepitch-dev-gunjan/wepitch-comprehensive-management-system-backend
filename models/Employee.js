@@ -3,6 +3,7 @@ const { Schema, model } = require("mongoose");
 const employeeSchema = new Schema({
   name: {
     type: String,
+    required: true,
   },
   address: {
     country: {
@@ -21,11 +22,27 @@ const employeeSchema = new Schema({
   phone: {
     type: Number,
   },
-  designation: {
+  email: {
     type: String,
   },
-  role: {
+  designation: {
+    type: Schema.Types.ObjectId,
+    ref: "Designation",
+  },
+  dateOfBirth: {
+    type: Date,
+  },
+  gender: {
     type: String,
+    enum: ["Male", "Female", "Other"],
+  },
+  role: {
+    type: Schema.Types.ObjectId,
+    ref: "Role",
+  },
+  department: {
+    type: Schema.Types.ObjectId,
+    ref: "Department",
   },
   position: {
     type: String,
